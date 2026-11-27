@@ -1,0 +1,1095 @@
+{
+ "version": "2026-11-27",
+ "text_source": "题目和选项文字以说明书为准（说明书第5条：严格按照提供的题目文字和顺序录入）。paper_text 是纸质表上不同的写法，仅供 OQ-10 确认，界面不显示。PSQI 第6题说明书缺，取自纸质表。",
+ "disclaimer": "本工具仅供临床辅助评估使用，不能替代专业精神科医生的诊断。",
+ "scales": {
+  "SDS": {
+   "id": "SDS",
+   "name": "抑郁自评量表（SDS）",
+   "item_count": 20,
+   "instruction": {
+    "text": "请仔细阅读每一个题目，然后根据您最近一星期的实际情况，选择一个最适合的选项。",
+    "source": "改写自纸质表填表说明（说明书未提供），见 OQ-11"
+   },
+   "options": [
+    {
+     "key": "A",
+     "label": "没有或很少时间",
+     "score_forward": 1,
+     "score_reverse": 4
+    },
+    {
+     "key": "B",
+     "label": "小部分时间",
+     "score_forward": 2,
+     "score_reverse": 3
+    },
+    {
+     "key": "C",
+     "label": "相当多时间",
+     "score_forward": 3,
+     "score_reverse": 2
+    },
+    {
+     "key": "D",
+     "label": "绝大部分或全部时间",
+     "score_forward": 4,
+     "score_reverse": 1
+    }
+   ],
+   "items": [
+    {
+     "no": 1,
+     "text": "我觉得闷闷不乐，情绪低沉",
+     "reverse": false,
+     "paper_text": "我觉得闷闷不乐、情绪低沉"
+    },
+    {
+     "no": 2,
+     "text": "我觉得一天中早晨最好",
+     "reverse": true
+    },
+    {
+     "no": 3,
+     "text": "我一阵阵哭出来或觉得想哭",
+     "reverse": false
+    },
+    {
+     "no": 4,
+     "text": "我晚上睡眠不好",
+     "reverse": false
+    },
+    {
+     "no": 5,
+     "text": "我吃得跟平常一样多",
+     "reverse": true
+    },
+    {
+     "no": 6,
+     "text": "我与异性密切接触时和以往一样感到愉快",
+     "reverse": true
+    },
+    {
+     "no": 7,
+     "text": "我发觉我的体重在下降",
+     "reverse": false,
+     "paper_text": "我发觉我的体重下降"
+    },
+    {
+     "no": 8,
+     "text": "我有便秘的苦恼",
+     "reverse": false
+    },
+    {
+     "no": 9,
+     "text": "我心跳比平常快",
+     "reverse": false
+    },
+    {
+     "no": 10,
+     "text": "我无缘无故地感到疲乏",
+     "reverse": false
+    },
+    {
+     "no": 11,
+     "text": "我的头脑跟平常一样清楚",
+     "reverse": true
+    },
+    {
+     "no": 12,
+     "text": "我觉得经常做的事情并没有困难",
+     "reverse": true
+    },
+    {
+     "no": 13,
+     "text": "我觉得不安而平静不下来",
+     "reverse": false
+    },
+    {
+     "no": 14,
+     "text": "我对将来抱有希望",
+     "reverse": true
+    },
+    {
+     "no": 15,
+     "text": "我比平常容易生气激动",
+     "reverse": false
+    },
+    {
+     "no": 16,
+     "text": "我觉得作出决定是容易的",
+     "reverse": true
+    },
+    {
+     "no": 17,
+     "text": "我觉得自己是个有用的人，有人需要我",
+     "reverse": true
+    },
+    {
+     "no": 18,
+     "text": "我的生活过得很有意思",
+     "reverse": true,
+     "paper_text": "我生活过得很有意思"
+    },
+    {
+     "no": 19,
+     "text": "我认为如果我死了别人会生活得好些",
+     "reverse": false,
+     "paper_text": "我认为如果我死别人会生活得好些"
+    },
+    {
+     "no": 20,
+     "text": "平常感兴趣的事我仍然照样感兴趣",
+     "reverse": true,
+     "paper_text": "我平常感兴趣的事我仍然照样感兴趣"
+    }
+   ],
+   "grades": {
+    "result_label": "抑郁标准分",
+    "bands": [
+     {
+      "min": 0,
+      "max": 52,
+      "text": "正常范围"
+     },
+     {
+      "min": 53,
+      "max": 62,
+      "text": "轻度抑郁"
+     },
+     {
+      "min": 63,
+      "max": 72,
+      "text": "中度抑郁"
+     },
+     {
+      "min": 73,
+      "max": 100,
+      "text": "重度抑郁"
+     }
+    ]
+   }
+  },
+  "SAS": {
+   "id": "SAS",
+   "name": "焦虑自评量表（SAS）",
+   "item_count": 20,
+   "instruction": {
+    "text": "请仔细阅读每一条，把意思弄明白，然后根据您最近一星期的实际感觉，选择一个最适合的选项。",
+    "source": "改写自纸质表填表注意事项（说明书未提供），见 OQ-11"
+   },
+   "options": [
+    {
+     "key": "A",
+     "label": "没有或很少时间",
+     "score_forward": 1,
+     "score_reverse": 4
+    },
+    {
+     "key": "B",
+     "label": "少部分时间",
+     "score_forward": 2,
+     "score_reverse": 3
+    },
+    {
+     "key": "C",
+     "label": "相当多时间",
+     "score_forward": 3,
+     "score_reverse": 2
+    },
+    {
+     "key": "D",
+     "label": "绝大部分或全部时间",
+     "score_forward": 4,
+     "score_reverse": 1
+    }
+   ],
+   "items": [
+    {
+     "no": 1,
+     "text": "我觉得比平常容易紧张或者急",
+     "reverse": false,
+     "paper_text": "我觉得比平常容易紧张或着急"
+    },
+    {
+     "no": 2,
+     "text": "我无缘无故地感到害怕",
+     "reverse": false
+    },
+    {
+     "no": 3,
+     "text": "我容易心里烦乱或觉得惊恐",
+     "reverse": false
+    },
+    {
+     "no": 4,
+     "text": "我觉得我可能将要发疯",
+     "reverse": false
+    },
+    {
+     "no": 5,
+     "text": "我觉得一切都很好，也不会发生什么不幸",
+     "reverse": true
+    },
+    {
+     "no": 6,
+     "text": "我手脚发抖打颤",
+     "reverse": false
+    },
+    {
+     "no": 7,
+     "text": "我因为头痛、颈痛和背痛而苦恼",
+     "reverse": false
+    },
+    {
+     "no": 8,
+     "text": "我感觉容易衰弱和疲乏",
+     "reverse": false
+    },
+    {
+     "no": 9,
+     "text": "我觉得心平气和，并且容易安静坐着",
+     "reverse": true
+    },
+    {
+     "no": 10,
+     "text": "我觉得心跳得很快",
+     "reverse": false
+    },
+    {
+     "no": 11,
+     "text": "我因为一阵阵头晕而苦恼",
+     "reverse": false,
+     "paper_text": "我因为一阵阵头晕苦恼"
+    },
+    {
+     "no": 12,
+     "text": "我有晕倒发作，或觉得要晕倒似的",
+     "reverse": false
+    },
+    {
+     "no": 13,
+     "text": "我吸气呼气都感到很容易",
+     "reverse": true
+    },
+    {
+     "no": 14,
+     "text": "我的手脚麻木和刺痛",
+     "reverse": false
+    },
+    {
+     "no": 15,
+     "text": "我因为胃痛和消化不良而苦恼",
+     "reverse": false
+    },
+    {
+     "no": 16,
+     "text": "我常常要小便",
+     "reverse": false
+    },
+    {
+     "no": 17,
+     "text": "我的手脚常常是干燥温暖的",
+     "reverse": true
+    },
+    {
+     "no": 18,
+     "text": "我脸红发热",
+     "reverse": false
+    },
+    {
+     "no": 19,
+     "text": "我容易入睡并且一夜睡得很好",
+     "reverse": true
+    },
+    {
+     "no": 20,
+     "text": "我做恶梦",
+     "reverse": false
+    }
+   ],
+   "grades": {
+    "result_label": "焦虑标准分",
+    "bands": [
+     {
+      "min": 0,
+      "max": 49,
+      "text": "正常范围"
+     },
+     {
+      "min": 50,
+      "max": 59,
+      "text": "轻度焦虑"
+     },
+     {
+      "min": 60,
+      "max": 69,
+      "text": "中度焦虑"
+     },
+     {
+      "min": 70,
+      "max": 100,
+      "text": "重度焦虑"
+     }
+    ]
+   }
+  },
+  "PSQI": {
+   "id": "PSQI",
+   "name": "匹兹堡睡眠质量指数（PSQI）",
+   "instruction": {
+    "text": "根据你过去一个月的睡眠习惯，对一个月中多数的白天和晚上的睡眠情况做准确回答。要回答所有问题。时间以24小时制填写。",
+    "source": "纸质表指导语原文"
+   },
+   "numbering": "按纸质表/原版题号：说明书 Q6→第7题，Q7→第8题，Q8→第9题；第6题为纸质表新增",
+   "items": [
+    {
+     "id": "1",
+     "type": "time",
+     "text": "近1个月，晚上上床睡觉通常是几点？",
+     "spec_no": "Q1",
+     "note": "24小时制，时、分两个下拉框（分钟5分钟一档），也可直接键入 2330 / 23:30；用于计算成分D，见 OQ-03"
+    },
+    {
+     "id": "2",
+     "type": "choice",
+     "text": "近1个月，从上床到入睡通常需要多少分钟？",
+     "spec_no": "Q2",
+     "options": [
+      {
+       "key": "A",
+       "label": "≤15分钟",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "16~30分钟",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "31~60分钟",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": ">60分钟",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "id": "3",
+     "type": "time",
+     "text": "近1个月，通常早上几点起床？",
+     "spec_no": "Q3",
+     "note": "24小时制，时、分两个下拉框（分钟5分钟一档），也可直接键入 2330 / 23:30；用于计算成分D，见 OQ-03"
+    },
+    {
+     "id": "4",
+     "type": "duration",
+     "text": "近1个月，每夜通常实际睡眠多少小时？",
+     "spec_no": "Q4",
+     "spec_options_for_reference": [
+      {
+       "key": "A",
+       "label": ">7小时",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "6~7小时",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "5~6小时",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "<5小时",
+       "score": 3
+      }
+     ],
+     "note": "说明书原为四选一；规划改为填写时长（小时+分钟），由时长自动换算成分C，并用于成分D，见 OQ-03"
+    },
+    {
+     "id": "5",
+     "type": "group",
+     "text": "近1个月，因下列情况影响睡眠而烦恼",
+     "spec_no": "Q5",
+     "options": [
+      {
+       "key": "A",
+       "label": "无",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "<1次/周",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "1~2次/周",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "≥3次/周",
+       "score": 3
+      }
+     ],
+     "subitems": [
+      {
+       "id": "5a",
+       "text": "不能在30分钟内入睡"
+      },
+      {
+       "id": "5b",
+       "text": "在晚上睡眠中醒来或早醒"
+      },
+      {
+       "id": "5c",
+       "text": "晚上有无起床上洗手间"
+      },
+      {
+       "id": "5d",
+       "text": "不舒服的呼吸"
+      },
+      {
+       "id": "5e",
+       "text": "大声咳嗽或打鼾声"
+      },
+      {
+       "id": "5f",
+       "text": "感到寒冷"
+      },
+      {
+       "id": "5g",
+       "text": "感到太热"
+      },
+      {
+       "id": "5h",
+       "text": "做不好的梦"
+      },
+      {
+       "id": "5i",
+       "text": "出现疼痛"
+      },
+      {
+       "id": "5j",
+       "text": "其他原因",
+       "free_text": true,
+       "free_text_label": "请填写具体原因（选填）",
+       "free_text_shown_if": "5j 选了B、C或D（说明书：如选此项，需有一个填空框），见 OQ-18"
+      }
+     ]
+    },
+    {
+     "id": "6",
+     "type": "choice",
+     "text": "你对过去这一个月总睡眠质量评分？",
+     "spec_no": null,
+     "source": "纸质表第6题（说明书缺此题，见 OQ-02）",
+     "options": [
+      {
+       "key": "A",
+       "label": "非常好",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "尚好",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "不好",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "非常差",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "id": "7",
+     "type": "choice",
+     "text": "近1个月，您用药物催眠的情况：",
+     "spec_no": "Q6",
+     "options": [
+      {
+       "key": "A",
+       "label": "无",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "<1次/周",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "1~2次/周",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "≥3次/周",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "id": "8",
+     "type": "choice",
+     "text": "近1个月，您常感到困倦吗？",
+     "spec_no": "Q7",
+     "options": [
+      {
+       "key": "A",
+       "label": "无",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "<1次/周",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "1~2次/周",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "≥3次/周",
+       "score": 3
+      }
+     ]
+    },
+    {
+     "id": "9",
+     "type": "choice",
+     "text": "近1个月，您做事情的精力不足吗？",
+     "spec_no": "Q8",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔有",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "有时有",
+       "score": 2
+      },
+      {
+       "key": "D",
+       "label": "经常有",
+       "score": 3
+      }
+     ]
+    }
+   ],
+   "grades": {
+    "result_label": "PSQI总分",
+    "bands": [
+     {
+      "min": 0,
+      "max": 5,
+      "text": "睡眠质量很好"
+     },
+     {
+      "min": 6,
+      "max": 10,
+      "text": "睡眠质量还行"
+     },
+     {
+      "min": 11,
+      "max": 15,
+      "text": "睡眠质量一般"
+     },
+     {
+      "min": 16,
+      "max": 21,
+      "text": "睡眠质量很差"
+     }
+    ]
+   }
+  },
+  "BSSI": {
+   "id": "BSSI",
+   "name": "贝克自杀意念量表（BSSI-19项自评版）",
+   "instruction": {
+    "text": "",
+    "source": "说明书和纸质表都没有指导语，见 OQ-11"
+   },
+   "options_scoring": {
+    "A": 0,
+    "B": 1,
+    "C": 2
+   },
+   "items": [
+    {
+     "no": 1,
+     "text": "您是否有希望活下去的愿望？",
+     "options": [
+      {
+       "key": "A",
+       "label": "对活下去有强烈的愿望",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "对活下去有微弱的愿望",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "没有活下去的愿望",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "no": 2,
+     "text": "您是否有想死的愿望？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想死的愿望",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "有微弱的想死愿望",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "有强烈的想死愿望",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "no": 3,
+     "text": "您是否考虑过自杀？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有考虑过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔考虑过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常考虑或一直考虑",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "no": 4,
+     "text": "您是否有自杀的意图？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有自杀意图",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "有微弱的自杀意图",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "有强烈的自杀意图",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "no": 5,
+     "text": "如果您有自杀意图，您会去做吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "肯定不会去做",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "可能会去做",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "肯定会去做",
+       "score": 2
+      }
+     ]
+    },
+    {
+     "no": 6,
+     "text": "您想过自杀的方法吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 7,
+     "text": "您想过准备自杀的计划吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 8,
+     "text": "您想过向别人说您的自杀意图吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有说过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔说过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常说或一直说",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 9,
+     "text": "您想过在什么情况下会自杀吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 10,
+     "text": "您想过用何种方式自杀吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 11,
+     "text": "您想过自杀的时间吗？（比如早晚）",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 12,
+     "text": "您想过自杀的地点吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 13,
+     "text": "您想过准备自杀的工具或东西吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 14,
+     "text": "您是否觉得您对自杀有控制力？",
+     "options": [
+      {
+       "key": "A",
+       "label": "有控制力",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "有时有，有时无",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "完全没有控制力",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 15,
+     "text": "您想过自杀后别人会怎么想吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 16,
+     "text": "您想过写遗书吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 17,
+     "text": "您想过死后的世界是什么样吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 18,
+     "text": "您想过如果您死了，您的家人会怎样吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "没有想过",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "偶尔想过",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "经常想或一直想",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 19,
+     "text": "您觉得死亡是解决您问题的方法吗？",
+     "options": [
+      {
+       "key": "A",
+       "label": "完全不是",
+       "score": 0
+      },
+      {
+       "key": "B",
+       "label": "有时觉得是",
+       "score": 1
+      },
+      {
+       "key": "C",
+       "label": "觉得肯定是",
+       "score": 2
+      }
+     ],
+     "shown_only_if": "第4题或第5题选了B或C"
+    },
+    {
+     "no": 20,
+     "text": "您以前有过自杀企图吗？",
+     "type": "text",
+     "input_hint": "填写次数，只做文字记录，不计分",
+     "scored": false,
+     "shown_only_if": "第4题或第5题选了B或C（默认；见 OQ-06）"
+    },
+    {
+     "no": 21,
+     "text": "您以前有过自杀尝试的严重程度？",
+     "type": "text",
+     "input_hint": "只做文字记录，不计分",
+     "scored": false,
+     "shown_only_if": "第4题或第5题选了B或C（默认；见 OQ-06）"
+    }
+   ],
+   "grades": {
+    "result_label": "BSSI总分",
+    "bands": [
+     {
+      "min": 0,
+      "max": 5,
+      "text": "低风险"
+     },
+     {
+      "min": 6,
+      "max": 9,
+      "text": "存在自杀意念/准备"
+     },
+     {
+      "min": 10,
+      "max": 38,
+      "text": "中高风险，建议立即进行临床干预访谈"
+     }
+    ]
+   }
+  }
+ }
+}

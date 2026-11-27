@@ -1,0 +1,2953 @@
+{
+ "meta": {
+  "version": "2026-11-27",
+  "defaults": {
+   "zung_rounding": "half_up（说明书：四舍五入）",
+   "sds_severe_min": 73,
+   "sas_severe_min": 70,
+   "psqi_include_item6": true,
+   "psqi_efficiency_zero_if_at_least_pct": 85,
+   "psqi_duration_bands": ">7h→0, 6h≤x≤7h→1, 5h≤x<6h→2, <5h→3",
+   "psqi_tib_warn_hours": 16,
+   "bssi_ask_history_when_skipped": false
+  },
+  "note": "期望值是手算后再用独立脚本复核的。字段说明见 docs/ACCEPTANCE.md。"
+ },
+ "sds": [
+  {
+   "id": "SDS-01",
+   "desc": "全部选A（每题都按1键）",
+   "answers": "AAAAAAAAAAAAAAAAAAAA",
+   "item_scores": [
+    1,
+    4,
+    1,
+    1,
+    4,
+    4,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    1,
+    4,
+    1,
+    4,
+    4,
+    4,
+    1,
+    4
+   ],
+   "expect": {
+    "raw": 50,
+    "standard": 63,
+    "grade": "中度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 50,
+    "standard": 62,
+    "grade": "轻度抑郁"
+   }
+  },
+  {
+   "id": "SDS-02",
+   "desc": "全部选D（每题都按4键）",
+   "answers": "DDDDDDDDDDDDDDDDDDDD",
+   "item_scores": [
+    4,
+    1,
+    4,
+    4,
+    1,
+    1,
+    4,
+    4,
+    4,
+    4,
+    1,
+    1,
+    4,
+    1,
+    4,
+    1,
+    1,
+    1,
+    4,
+    1
+   ],
+   "expect": {
+    "raw": 50,
+    "standard": 63,
+    "grade": "中度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 50,
+    "standard": 62,
+    "grade": "轻度抑郁"
+   }
+  },
+  {
+   "id": "SDS-03",
+   "desc": "理论最低分：正向题选A、反向题选D",
+   "answers": "ADAADDAAAADDADADDDAD",
+   "item_scores": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "expect": {
+    "raw": 20,
+    "standard": 25,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 20,
+    "standard": 25,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SDS-04",
+   "desc": "理论最高分：正向题选D、反向题选A",
+   "answers": "DADDAADDDDAADADAAADA",
+   "item_scores": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "expect": {
+    "raw": 80,
+    "standard": 100,
+    "grade": "重度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 80,
+    "standard": 100,
+    "grade": "重度抑郁"
+   }
+  },
+  {
+   "id": "SDS-05",
+   "desc": "反向题单独检查：其余题最低分，只有第2题（反向）选A",
+   "answers": "AAAADDAAAADDADADDDAD",
+   "item_scores": [
+    1,
+    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "expect": {
+    "raw": 23,
+    "standard": 29,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 23,
+    "standard": 28,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SDS-06",
+   "desc": "粗分41",
+   "answers": "BCCBCCBBBBCCBCBCCCBC",
+   "item_scores": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 41,
+    "standard": 51,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 41,
+    "standard": 51,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SDS-07",
+   "desc": "粗分42：四舍五入与取整分级不同（见 OQ-01）",
+   "answers": "BCCBCCBCBBCCBCBCCCBC",
+   "item_scores": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 42,
+    "standard": 53,
+    "grade": "轻度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 42,
+    "standard": 52,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SDS-08",
+   "desc": "粗分43",
+   "answers": "BCCBCCBCBBCBBCBCCCBC",
+   "item_scores": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 43,
+    "standard": 54,
+    "grade": "轻度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 43,
+    "standard": 53,
+    "grade": "轻度抑郁"
+   }
+  },
+  {
+   "id": "SDS-09",
+   "desc": "粗分49",
+   "answers": "CCCBCBBCBCCBBCCCBCCC",
+   "item_scores": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2
+   ],
+   "expect": {
+    "raw": 49,
+    "standard": 61,
+    "grade": "轻度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 49,
+    "standard": 61,
+    "grade": "轻度抑郁"
+   }
+  },
+  {
+   "id": "SDS-10",
+   "desc": "粗分50（混合作答）：四舍五入与取整分级不同",
+   "answers": "CCCCCBBCBCCBBCCCBCCC",
+   "item_scores": [
+    3,
+    2,
+    3,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2
+   ],
+   "expect": {
+    "raw": 50,
+    "standard": 63,
+    "grade": "中度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 50,
+    "standard": 62,
+    "grade": "轻度抑郁"
+   }
+  },
+  {
+   "id": "SDS-11",
+   "desc": "粗分54",
+   "answers": "CBCCCBCCBCBBBCCBBCCC",
+   "item_scores": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    2
+   ],
+   "expect": {
+    "raw": 54,
+    "standard": 68,
+    "grade": "中度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 54,
+    "standard": 67,
+    "grade": "中度抑郁"
+   }
+  },
+  {
+   "id": "SDS-12",
+   "desc": "粗分57",
+   "answers": "CBCCBBCCCCBBBCCBBCCB",
+   "item_scores": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "expect": {
+    "raw": 57,
+    "standard": 71,
+    "grade": "中度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 57,
+    "standard": 71,
+    "grade": "中度抑郁"
+   }
+  },
+  {
+   "id": "SDS-13",
+   "desc": "粗分58：四舍五入得73（重度），取整得72（中度），见 OQ-01/OQ-09",
+   "answers": "CBCCBBCCCCBBCCCBBCCB",
+   "item_scores": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "expect": {
+    "raw": 58,
+    "standard": 73,
+    "grade": "重度抑郁"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 58,
+    "standard": 72,
+    "grade": "中度抑郁"
+   }
+  }
+ ],
+ "sas": [
+  {
+   "id": "SAS-01",
+   "desc": "全部选A（每题都按1键）",
+   "answers": "AAAAAAAAAAAAAAAAAAAA",
+   "item_scores": [
+    1,
+    1,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1,
+    4,
+    1,
+    4,
+    1
+   ],
+   "expect": {
+    "raw": 35,
+    "standard": 44,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 35,
+    "standard": 43,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SAS-02",
+   "desc": "全部选D（每题都按4键）",
+   "answers": "DDDDDDDDDDDDDDDDDDDD",
+   "item_scores": [
+    4,
+    4,
+    4,
+    4,
+    1,
+    4,
+    4,
+    4,
+    1,
+    4,
+    4,
+    4,
+    1,
+    4,
+    4,
+    4,
+    1,
+    4,
+    1,
+    4
+   ],
+   "expect": {
+    "raw": 65,
+    "standard": 81,
+    "grade": "重度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 65,
+    "standard": 81,
+    "grade": "重度焦虑"
+   }
+  },
+  {
+   "id": "SAS-03",
+   "desc": "理论最低分：正向题选A、反向题选D",
+   "answers": "AAAADAAADAAADAAADADA",
+   "item_scores": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "expect": {
+    "raw": 20,
+    "standard": 25,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 20,
+    "standard": 25,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SAS-04",
+   "desc": "理论最高分：正向题选D、反向题选A",
+   "answers": "DDDDADDDADDDADDDADAD",
+   "item_scores": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "expect": {
+    "raw": 80,
+    "standard": 100,
+    "grade": "重度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 80,
+    "standard": 100,
+    "grade": "重度焦虑"
+   }
+  },
+  {
+   "id": "SAS-05",
+   "desc": "反向题单独检查：其余题最低分，只有第5题（反向）选A",
+   "answers": "AAAAAAAADAAADAAADADA",
+   "item_scores": [
+    1,
+    1,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "expect": {
+    "raw": 23,
+    "standard": 29,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 23,
+    "standard": 28,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SAS-06",
+   "desc": "粗分39",
+   "answers": "BBBBCBBBCBBBCBBBCACB",
+   "item_scores": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 39,
+    "standard": 49,
+    "grade": "正常范围"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 39,
+    "standard": 48,
+    "grade": "正常范围"
+   }
+  },
+  {
+   "id": "SAS-07",
+   "desc": "粗分40：标准分正好50",
+   "answers": "BBBBCBBBCBBBCBBBCBCB",
+   "item_scores": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 40,
+    "standard": 50,
+    "grade": "轻度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 40,
+    "standard": 50,
+    "grade": "轻度焦虑"
+   }
+  },
+  {
+   "id": "SAS-08",
+   "desc": "粗分42：四舍五入53，取整52，分级相同",
+   "answers": "BBCBCBBCCBBBCBBBCBCB",
+   "item_scores": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 42,
+    "standard": 53,
+    "grade": "轻度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 42,
+    "standard": 52,
+    "grade": "轻度焦虑"
+   }
+  },
+  {
+   "id": "SAS-09",
+   "desc": "粗分47",
+   "answers": "CBCBCCBCCCBCCBBBBBCB",
+   "item_scores": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 47,
+    "standard": 59,
+    "grade": "轻度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 47,
+    "standard": 58,
+    "grade": "轻度焦虑"
+   }
+  },
+  {
+   "id": "SAS-10",
+   "desc": "粗分48：标准分正好60",
+   "answers": "CBCBCCBCCCBCCBCBBBCB",
+   "item_scores": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    2
+   ],
+   "expect": {
+    "raw": 48,
+    "standard": 60,
+    "grade": "中度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 48,
+    "standard": 60,
+    "grade": "中度焦虑"
+   }
+  },
+  {
+   "id": "SAS-11",
+   "desc": "粗分55",
+   "answers": "CCCCCCCCCCCCCBCCBBBC",
+   "item_scores": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "expect": {
+    "raw": 55,
+    "standard": 69,
+    "grade": "中度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 55,
+    "standard": 68,
+    "grade": "中度焦虑"
+   }
+  },
+  {
+   "id": "SAS-12",
+   "desc": "粗分56：标准分正好70（见 OQ-09）",
+   "answers": "CCCCBCCCCCCCCBCCBBBC",
+   "item_scores": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "expect": {
+    "raw": 56,
+    "standard": 70,
+    "grade": "重度焦虑"
+   },
+   "expect_if_floor_rounding": {
+    "raw": 56,
+    "standard": 70,
+    "grade": "重度焦虑"
+   }
+  }
+ ],
+ "psqi": [
+  {
+   "id": "PSQI-01",
+   "desc": "全部最好：23:00上床、07:00起床、睡8小时，其余全选A",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 0,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-02",
+   "desc": "全部最差：22:00上床、08:00起床、睡4小时，其余全选D",
+   "input": {
+    "q1": "22:00",
+    "q2": "D",
+    "q3": "08:00",
+    "q4_minutes": 240,
+    "q5a": "D",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "D",
+    "q5f": "D",
+    "q5g": "D",
+    "q5h": "D",
+    "q5i": "D",
+    "q5j": "D",
+    "q5j_text": "",
+    "q6": "D",
+    "q7": "D",
+    "q8": "D",
+    "q9": "D"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 40.0,
+    "components": {
+     "A": 3,
+     "B": 3,
+     "C": 3,
+     "D": 3,
+     "E": 3,
+     "F": 3,
+     "G": 3
+    },
+    "total": 21,
+    "grade": "睡眠质量很差",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-03",
+   "desc": "跨午夜：01:30上床、07:30起床、睡5小时；总分正好10",
+   "input": {
+    "q1": "01:30",
+    "q2": "B",
+    "q3": "07:30",
+    "q4_minutes": 300,
+    "q5a": "C",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "C",
+    "q5e": "B",
+    "q5f": "B",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "B",
+    "q7": "A",
+    "q8": "B",
+    "q9": "C"
+   },
+   "expect": {
+    "tib_minutes": 360,
+    "efficiency_pct": 83.3,
+    "components": {
+     "A": 1,
+     "B": 2,
+     "C": 2,
+     "D": 1,
+     "E": 2,
+     "F": 0,
+     "G": 2
+    },
+    "total": 10,
+    "grade": "睡眠质量还行",
+    "warn_tib_long": false
+   },
+   "expect_if_no_item6": {
+    "tib_minutes": 360,
+    "efficiency_pct": 83.3,
+    "components": {
+     "A": 0,
+     "B": 2,
+     "C": 2,
+     "D": 1,
+     "E": 2,
+     "F": 0,
+     "G": 2
+    },
+    "total": 9,
+    "grade": "睡眠质量还行",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-04",
+   "desc": "睡眠效率正好85%：22:00上床、08:00起床、睡8小时30分（见 OQ-04）",
+   "input": {
+    "q1": "22:00",
+    "q2": "A",
+    "q3": "08:00",
+    "q4_minutes": 510,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 85.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 0,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-05",
+   "desc": "睡眠效率82.5%：22:00–08:00、睡8小时15分",
+   "input": {
+    "q1": "22:00",
+    "q2": "A",
+    "q3": "08:00",
+    "q4_minutes": 495,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 82.5,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 1,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-06",
+   "desc": "睡眠效率正好75%、睡眠时长正好6小时：23:00–07:00、睡6小时",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 360,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 75.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 1,
+     "D": 1,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-07",
+   "desc": "睡眠效率正好65%：22:00–08:00、睡6小时30分",
+   "input": {
+    "q1": "22:00",
+    "q2": "A",
+    "q3": "08:00",
+    "q4_minutes": 390,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 65.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 1,
+     "D": 2,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-08",
+   "desc": "睡眠效率62.5%、时长正好5小时：23:00–07:00、睡5小时；总分正好5",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 300,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 62.5,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 2,
+     "D": 3,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 5,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-09",
+   "desc": "睡眠时长正好7小时：22:00–08:00、睡7小时",
+   "input": {
+    "q1": "22:00",
+    "q2": "A",
+    "q3": "08:00",
+    "q4_minutes": 420,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 70.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 1,
+     "D": 2,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-10",
+   "desc": "睡眠时长7小时15分：22:00–08:00",
+   "input": {
+    "q1": "22:00",
+    "q2": "A",
+    "q3": "08:00",
+    "q4_minutes": 435,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 72.5,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 2,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-11",
+   "desc": "睡眠时长5小时45分：23:00–07:00",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 345,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 71.9,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 2,
+     "D": 2,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 4,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-12",
+   "desc": "睡眠时长4小时45分：23:00–05:00",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "05:00",
+    "q4_minutes": 285,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 360,
+    "efficiency_pct": 79.2,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 3,
+     "D": 1,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 4,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-13",
+   "desc": "成分E：5b–5j合计9",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 1,
+     "F": 0,
+     "G": 0
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-14",
+   "desc": "成分E：5b–5j合计10",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "B",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 2,
+     "F": 0,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-15",
+   "desc": "成分E：5b–5j合计18",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "D",
+    "q5f": "D",
+    "q5g": "D",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 2,
+     "F": 0,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-16",
+   "desc": "成分E：5b–5j合计19",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "D",
+    "q5f": "D",
+    "q5g": "D",
+    "q5h": "B",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 3,
+     "F": 0,
+     "G": 0
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-17",
+   "desc": "5j其他原因选C并填写原因，计入成分E",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "C",
+    "q5j_text": "腿抽筋",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 1,
+     "F": 0,
+     "G": 0
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-18",
+   "desc": "成分B：入睡>60分钟(D)、5a选A，合计3",
+   "input": {
+    "q1": "23:00",
+    "q2": "D",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 2,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-19",
+   "desc": "成分B：入睡≤15分钟(A)、5a选B，合计1；5a不计入成分E",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "B",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 1,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-20",
+   "desc": "成分B：第2题D、5a选C，合计5",
+   "input": {
+    "q1": "23:00",
+    "q2": "D",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "C",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 3,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-21",
+   "desc": "成分G：第8题A、第9题B，合计1",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "B"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 1
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-22",
+   "desc": "成分G：第8题C、第9题D，合计5",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "C",
+    "q9": "D"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 3
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-23",
+   "desc": "成分A和F分开算：第6题（睡眠质量）选C、第7题（催眠药物）选B（见 OQ-02）",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "C",
+    "q7": "B",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 2,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 1,
+     "G": 0
+    },
+    "total": 3,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   },
+   "expect_if_no_item6": {
+    "tib_minutes": 480,
+    "efficiency_pct": 100.0,
+    "components": {
+     "A": 1,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 1,
+     "G": 0
+    },
+    "total": 2,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-24",
+   "desc": "跨午夜，总分正好11（PSQI-03 再加第7题选B）",
+   "input": {
+    "q1": "01:30",
+    "q2": "B",
+    "q3": "07:30",
+    "q4_minutes": 300,
+    "q5a": "C",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "C",
+    "q5e": "B",
+    "q5f": "B",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "B",
+    "q7": "B",
+    "q8": "B",
+    "q9": "C"
+   },
+   "expect": {
+    "tib_minutes": 360,
+    "efficiency_pct": 83.3,
+    "components": {
+     "A": 1,
+     "B": 2,
+     "C": 2,
+     "D": 1,
+     "E": 2,
+     "F": 1,
+     "G": 2
+    },
+    "total": 11,
+    "grade": "睡眠质量一般",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-25",
+   "desc": "总分正好6",
+   "input": {
+    "q1": "23:00",
+    "q2": "B",
+    "q3": "07:00",
+    "q4_minutes": 360,
+    "q5a": "A",
+    "q5b": "B",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "B",
+    "q7": "B",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 75.0,
+    "components": {
+     "A": 1,
+     "B": 1,
+     "C": 1,
+     "D": 1,
+     "E": 1,
+     "F": 1,
+     "G": 0
+    },
+    "total": 6,
+    "grade": "睡眠质量还行",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-26",
+   "desc": "总分正好15",
+   "input": {
+    "q1": "22:00",
+    "q2": "D",
+    "q3": "08:00",
+    "q4_minutes": 240,
+    "q5a": "D",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "D",
+    "q5f": "D",
+    "q5g": "D",
+    "q5h": "D",
+    "q5i": "D",
+    "q5j": "D",
+    "q5j_text": "",
+    "q6": "D",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 40.0,
+    "components": {
+     "A": 3,
+     "B": 3,
+     "C": 3,
+     "D": 3,
+     "E": 3,
+     "F": 0,
+     "G": 0
+    },
+    "total": 15,
+    "grade": "睡眠质量一般",
+    "warn_tib_long": false
+   },
+   "expect_if_no_item6": {
+    "tib_minutes": 600,
+    "efficiency_pct": 40.0,
+    "components": {
+     "A": 0,
+     "B": 3,
+     "C": 3,
+     "D": 3,
+     "E": 3,
+     "F": 0,
+     "G": 0
+    },
+    "total": 12,
+    "grade": "睡眠质量一般",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-27",
+   "desc": "总分正好16",
+   "input": {
+    "q1": "22:00",
+    "q2": "D",
+    "q3": "08:00",
+    "q4_minutes": 240,
+    "q5a": "D",
+    "q5b": "D",
+    "q5c": "D",
+    "q5d": "D",
+    "q5e": "D",
+    "q5f": "D",
+    "q5g": "D",
+    "q5h": "D",
+    "q5i": "D",
+    "q5j": "D",
+    "q5j_text": "",
+    "q6": "D",
+    "q7": "B",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 600,
+    "efficiency_pct": 40.0,
+    "components": {
+     "A": 3,
+     "B": 3,
+     "C": 3,
+     "D": 3,
+     "E": 3,
+     "F": 1,
+     "G": 0
+    },
+    "total": 16,
+    "grade": "睡眠质量很差",
+    "warn_tib_long": false
+   },
+   "expect_if_no_item6": {
+    "tib_minutes": 600,
+    "efficiency_pct": 40.0,
+    "components": {
+     "A": 1,
+     "B": 3,
+     "C": 3,
+     "D": 3,
+     "E": 3,
+     "F": 1,
+     "G": 0
+    },
+    "total": 14,
+    "grade": "睡眠质量一般",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-28",
+   "desc": "夜班作息：08:00上床、16:00起床、睡7小时",
+   "input": {
+    "q1": "08:00",
+    "q2": "A",
+    "q3": "16:00",
+    "q4_minutes": 420,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 480,
+    "efficiency_pct": 87.5,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 1,
+     "D": 0,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 1,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": false
+   }
+  },
+  {
+   "id": "PSQI-29",
+   "desc": "在床时间超过16小时要先提示核对（可能把23点填成了11点）：11:00上床、07:00起床、睡7小时；医生确认后照常计算",
+   "input": {
+    "q1": "11:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 420,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "tib_minutes": 1200,
+    "efficiency_pct": 35.0,
+    "components": {
+     "A": 0,
+     "B": 0,
+     "C": 1,
+     "D": 3,
+     "E": 0,
+     "F": 0,
+     "G": 0
+    },
+    "total": 4,
+    "grade": "睡眠质量很好",
+    "warn_tib_long": true
+   }
+  },
+  {
+   "id": "PSQI-E1",
+   "desc": "上床和起床时间相同",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "23:00",
+    "q4_minutes": 480,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "error": "SAME_TIME"
+   }
+  },
+  {
+   "id": "PSQI-E2",
+   "desc": "实际睡眠比在床时间长：23:00–06:00（7小时）却填睡7小时30分",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "06:00",
+    "q4_minutes": 450,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "error": "SLEEP_GT_TIB"
+   }
+  },
+  {
+   "id": "PSQI-E3",
+   "desc": "实际睡眠时长为0",
+   "input": {
+    "q1": "23:00",
+    "q2": "A",
+    "q3": "07:00",
+    "q4_minutes": 0,
+    "q5a": "A",
+    "q5b": "A",
+    "q5c": "A",
+    "q5d": "A",
+    "q5e": "A",
+    "q5f": "A",
+    "q5g": "A",
+    "q5h": "A",
+    "q5i": "A",
+    "q5j": "A",
+    "q5j_text": "",
+    "q6": "A",
+    "q7": "A",
+    "q8": "A",
+    "q9": "A"
+   },
+   "expect": {
+    "error": "SLEEP_ZERO"
+   }
+  }
+ ],
+ "bssi": [
+  {
+   "id": "BSSI-01",
+   "desc": "前5题全选A：跳过6–19题直接出结果",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "A",
+    "5": "A"
+   },
+   "expect": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "total": 0,
+    "grade": "低风险",
+    "screen_positive": false
+   },
+   "expect_if_ask_history_when_skipped": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     20,
+     21
+    ],
+    "total": 0,
+    "grade": "低风险",
+    "screen_positive": false
+   }
+  },
+  {
+   "id": "BSSI-02",
+   "desc": "第1–3题选C、第4和5题选A：仍然跳过，但总分6",
+   "answers": {
+    "1": "C",
+    "2": "C",
+    "3": "C",
+    "4": "A",
+    "5": "A"
+   },
+   "expect": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "total": 6,
+    "grade": "存在自杀意念/准备",
+    "screen_positive": false
+   },
+   "expect_if_ask_history_when_skipped": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     20,
+     21
+    ],
+    "total": 6,
+    "grade": "存在自杀意念/准备",
+    "screen_positive": false
+   }
+  },
+  {
+   "id": "BSSI-03",
+   "desc": "只有第4题选B、其余全A：不跳题，总分1（见 OQ-07）",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "A",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 1,
+    "grade": "低风险",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-04",
+   "desc": "只有第5题选B（第4题A）：任一大于0就不跳题",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "A",
+    "5": "B",
+    "6": "A",
+    "7": "A",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "A",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 1,
+    "grade": "低风险",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-05",
+   "desc": "第1–19题全选C：满分38",
+   "answers": {
+    "1": "C",
+    "2": "C",
+    "3": "C",
+    "4": "C",
+    "5": "C",
+    "6": "C",
+    "7": "C",
+    "8": "C",
+    "9": "C",
+    "10": "C",
+    "11": "C",
+    "12": "C",
+    "13": "C",
+    "14": "C",
+    "15": "C",
+    "16": "C",
+    "17": "C",
+    "18": "C",
+    "19": "C"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 38,
+    "grade": "中高风险，建议立即进行临床干预访谈",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-06",
+   "desc": "总分正好5",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "B",
+    "5": "A",
+    "6": "B",
+    "7": "B",
+    "8": "B",
+    "9": "B",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "A",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 5,
+    "grade": "低风险",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-07",
+   "desc": "总分正好9（含第14题选C得2分）",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "C",
+    "5": "B",
+    "6": "C",
+    "7": "C",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "C",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 9,
+    "grade": "存在自杀意念/准备",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-08",
+   "desc": "总分正好10",
+   "answers": {
+    "1": "B",
+    "2": "A",
+    "3": "A",
+    "4": "C",
+    "5": "B",
+    "6": "C",
+    "7": "C",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "C",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 10,
+    "grade": "中高风险，建议立即进行临床干预访谈",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-09",
+   "desc": "改答案：先让第4题选B并把6–19全选C，再把第4题改回A：6–19必须隐藏且不计分",
+   "answers": {
+    "1": "B",
+    "2": "A",
+    "3": "B",
+    "4": "A",
+    "5": "A",
+    "6": "C",
+    "7": "C",
+    "8": "C",
+    "9": "C",
+    "10": "C",
+    "11": "C",
+    "12": "C",
+    "13": "C",
+    "14": "C",
+    "15": "C",
+    "16": "C",
+    "17": "C",
+    "18": "C",
+    "19": "C"
+   },
+   "expect": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "total": 2,
+    "grade": "低风险",
+    "screen_positive": false
+   },
+   "expect_if_ask_history_when_skipped": {
+    "skipped": true,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     20,
+     21
+    ],
+    "total": 2,
+    "grade": "低风险",
+    "screen_positive": false
+   }
+  },
+  {
+   "id": "BSSI-10",
+   "desc": "第14题方向检查：第4题B、第14题C（完全没有控制力=2分）",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "C",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 3,
+    "grade": "低风险",
+    "screen_positive": true
+   }
+  },
+  {
+   "id": "BSSI-11",
+   "desc": "第20、21题填写文字，不影响总分",
+   "answers": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "A",
+    "9": "A",
+    "10": "A",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "A",
+    "15": "A",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "A",
+    "20": "2次",
+    "21": "服药，曾住院"
+   },
+   "expect": {
+    "skipped": false,
+    "shown": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "total": 1,
+    "grade": "低风险",
+    "screen_positive": true
+   }
+  }
+ ],
+ "psqi_time_parse": [
+  {
+   "input": "23:30",
+   "minutes": 1410,
+   "desc": "标准写法"
+  },
+  {
+   "input": "2330",
+   "minutes": 1410,
+   "desc": "四位数字不带冒号"
+  },
+  {
+   "input": "930",
+   "minutes": 570,
+   "desc": "三位数字：第一位是小时"
+  },
+  {
+   "input": "0930",
+   "minutes": 570,
+   "desc": "四位数字带前导0"
+  },
+  {
+   "input": "9:30",
+   "minutes": 570,
+   "desc": "一位小时带冒号"
+  },
+  {
+   "input": "7",
+   "minutes": 420,
+   "desc": "一位数字只写小时"
+  },
+  {
+   "input": "23",
+   "minutes": 1380,
+   "desc": "两位数字只写小时"
+  },
+  {
+   "input": "0:00",
+   "minutes": 0,
+   "desc": "午夜"
+  },
+  {
+   "input": "00:05",
+   "minutes": 5,
+   "desc": "午夜后5分钟"
+  },
+  {
+   "input": "１２：００",
+   "minutes": 720,
+   "desc": "全角数字和全角冒号"
+  },
+  {
+   "input": "23.30",
+   "minutes": 1410,
+   "desc": "用点代替冒号"
+  },
+  {
+   "input": " 23:30 ",
+   "minutes": 1410,
+   "desc": "前后有空格"
+  },
+  {
+   "input": "2400",
+   "minutes": null,
+   "desc": "24点不合法，应写 0:00"
+  },
+  {
+   "input": "24:00",
+   "minutes": null,
+   "desc": "24点不合法，应写 0:00"
+  },
+  {
+   "input": "2360",
+   "minutes": null,
+   "desc": "分钟超过59"
+  },
+  {
+   "input": "23:5",
+   "minutes": null,
+   "desc": "冒号后分钟必须两位"
+  },
+  {
+   "input": "12345",
+   "minutes": null,
+   "desc": "五位数字"
+  },
+  {
+   "input": "",
+   "minutes": null,
+   "desc": "空"
+  },
+  {
+   "input": "abc",
+   "minutes": null,
+   "desc": "不是数字"
+  },
+  {
+   "input": "23:30:00",
+   "minutes": null,
+   "desc": "带秒"
+  }
+ ]
+}
